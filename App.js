@@ -11,7 +11,7 @@ const students = [
   },
   {
     id: 2,
-    name: 'María Gómez',
+    name: 'Stanley',
     card: '54321',
     photo: require('./assets/maria.jpg'),
   },
