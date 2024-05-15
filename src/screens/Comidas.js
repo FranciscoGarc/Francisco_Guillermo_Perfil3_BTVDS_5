@@ -48,56 +48,44 @@ const comidasFavoritas = [
 
 const Comidas = () => {
   return (
-    <ScrollView style={styles.container}>
-      <FlatList
-        data={comidasFavoritas}
-        renderItem={({ item }) => (
-          <View style={styles.item}>
-            <Image source={item.imagen} style={styles.imagen} />
-            <Text style={styles.nombre}>{item.nombre}</Text>
-            <Text style={styles.descripcion}>{item.descripcion}</Text>
-          </View>
-        )}
-        horizontal={true}
-      />
-    </ScrollView>
+    <View style={styles.container}>
+      {comidasFavoritas.map((comida) => (
+        <View key={comida.nombre} style={styles.comida}>
+          <Image source={{ uri: comida.imagen }} style={styles.imagen}
+ />
+          <Text style={styles.nombre}>{comida.nombre}</Text>
+          <Text style={styles.descripcion}>{comida.descripcion}</Text>
+        </View>
+      ))}
+    </View>
   );
 };
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
-  item: {
-    backgroundColor: "#fff",
+  comida: {
+    width: '100%',
+    height: 100,
+    backgroundColor: '#fff',
     borderRadius: 10,
+    marginBottom: 10,
     padding: 10,
-    margin: 10,
-    shadowColor: "#fff",
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5,
-    width: windowWidth * 0.8, // Set the width to 80% of the window width
   },
   imagen: {
-    width: 100,
-    height: 100,
-    borderRadius: 10,
+    width: 50,
+    height: 50,
+    borderRadius: 50,
   },
   nombre: {
-    fontSize: 20,
-    fontWeight: "bold",
-    textAlign: "center",
-    marginBottom: 5,
+    fontSize: 18,
+    fontWeight: 'bold',
   },
   descripcion: {
     fontSize: 16,
-    textAlign: "center",
   },
 });
 export default Comidas;
