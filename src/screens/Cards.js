@@ -6,13 +6,13 @@ const students = [
     id: 1,
     name: 'Fran Garcia',
     card: '12345',
-    photo: require('./assets/juan.jpg'),
+    photo: require('../../assets/juan.jpg'),
   },
   {
     id: 2,
     name: 'Stanley',
     card: '54321',
-    photo: require('./assets/maria.jpg'),
+    photo: require('../../assets/maria.jpg'),
   },
   // Agrega más estudiantes aquí
 ];
