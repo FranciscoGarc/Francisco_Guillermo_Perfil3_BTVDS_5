@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Icon from 'react-native-vector-icons/Ionicons'; // Importa la biblioteca de iconos
+import Icon from 'react-native-vector-icons/Ionicons';
 
 import Cards from './src/screens/Cards';
 import Comidas from './src/screens/Comidas';
