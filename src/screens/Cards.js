@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, ScrollView } from 'react-native';
-import guilleImage from '../images/guille.jpeg';
+import guilleImage from '../images/guille.png';
 import franImage from '../images/fran.jpeg';
 
 const students = [
