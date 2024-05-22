@@ -1,13 +1,14 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, ScrollView } from 'react-native';
 import guilleImage from '../images/guille.jpeg';
+import franImage from '../images/fran.jpeg';
 
 const students = [
   {
     id: 1,
     name: 'Francisco Daniel Garcia Ramos',
     card: '20220326',
-    photo: guilleImage,
+    photo: franImage,
   },
   {
     id: 2,
