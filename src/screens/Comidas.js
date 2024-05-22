@@ -1,55 +1,67 @@
 import React from 'react';
 import { View, Image, Text, StyleSheet, FlatList } from 'react-native';
 import { Card } from 'react-native-paper';
+import churrascoImage from '../images/churrasco.jpg';
+import hamburguesaImage from '../images/hamburguesa.jpeg';
+import lasagnaImage from '../images/lasagna.jpg';
+import paniniImage from '../images/panini.jpg';
+import pescadoImage from '../images/pescado.jpg';
+import pizzaImage from '../images/pizza.jpeg';
+import tomahawkImage from '../images/tomahawk.jpeg';
+import tacoImage from '../images/tacos.jpeg';
+import sopaImage from '../images/sopa.jpg';
+import tortaImage from '../images/torta.jpg';
+import pupusaImage from '../images/pupusas.jpeg';
 
 const foods = [
   {
     name: 'Pizza',
-    image: 'https://example.com/pizza.jpg',
+    image: pizzaImage,
   },
   {
-    name: 'Sushi',
-    image: 'https://example.com/sushi.jpg',
+    name: 'Hamburguesa',
+    image: hamburguesaImage,
   },
   {
     name: 'Tacos',
-    image: 'https://example.com/tacos.jpg',
+    image: tacoImage,
   },
   {
     name: 'Sopa de tortilla',
-    image: 'https://example.com/ensalada.jpg',
+    image: sopaImage,
+  },
+  {
+    name: 'Pupusas',
+    image: pupusaImage,
+  },
+  {
+    name: 'Torta',
+    image: tortaImage,
+  },
+  {
+    
+    name: 'Churrasco',
+    image: churrascoImage,
   },
   {
     name: 'Hamburguesa',
-    image: 'https://example.com/hamburguesa.jpg',
-  },
-  {
-    name: 'Pasta',
-    image: 'https://example.com/pasta.jpg',
+    image: hamburguesaImage,
   },
   {
     name: 'Lasagna',
-    image: 'https://example.com/ramen.jpg',
-  },
-  {
-    name: 'Hamburguesa',
-    image: 'https://example.com/paella.jpg',
-  },
-  {
-    name: 'Pescado frito',
-    image: 'https://example.com/ceviche.jpg',
-  },
-  {
-    name: 'Churrasco',
-    image: 'https://example.com/churrasco.jpg',
-  },
-  {
-    name: 'Tomahawk',
-    image: 'https://example.com/tiramisu.jpg',
+    image: lasagnaImage,
   },
   {
     name: 'Panini',
-    image: 'https://example.com/croissant.jpg',
+    image: paniniImage,
+  },
+  {
+    name: 'Pescado frito',
+    image: pescadoImage,
+  },
+  {
+    name: 'Tomahawk',
+    image: tomahawkImage,
   },
 ];
 
@@ -62,7 +74,7 @@ const Separator = ({ title }) => (
 const Comidas = () => {
   const renderItem = ({ item }) => (
     <Card style={styles.card}>
-      <Image source={{ uri: item.image }} style={styles.image} />
+      <Image source={ item.image } style={styles.image} />
       <View style={styles.info}>
         <Text style={styles.name}>{item.name}</Text>
       </View>
