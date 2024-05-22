@@ -1,91 +1,128 @@
-import React from "react";
-import {
-  View,
-  Text,
-  StyleSheet,
-  Image,
-  ScrollView,
-  FlatList,
-  Dimensions,
-} from "react-native";
-const windowWidth = Dimensions.get("window").width;
+import React from 'react';
+import { View, Image, Text, StyleSheet, FlatList } from 'react-native';
+import { Card } from 'react-native-paper';
 
-const comidasFavoritas = [
+const foods = [
   {
-    imagen: "../../assets/juan.jpg",
-    nombre: "Pizza",
-    descripcion:
-      "Una deliciosa pizza con queso mozzarella, salsa de tomate y pepperoni.",
+    name: 'Pizza',
+    image: 'https://example.com/pizza.jpg',
   },
   {
-    imagen: "../../assets/juan.jpg",
-    nombre: "Hamburguesa",
-    descripcion:
-      "Una jugosa hamburguesa con queso cheddar, lechuga, tomate y cebolla.",
+    name: 'Sushi',
+    image: 'https://example.com/sushi.jpg',
   },
   {
-    imagen: "../../assets/juan.jpg",
-    nombre: "Sushi",
-    descripcion: "Un delicioso surtido de sushi con salmón, atún y aguacate.",
+    name: 'Tacos',
+    image: 'https://example.com/tacos.jpg',
   },
   {
-    imagen: ".../../assets/juan.jpg",
-    nombre: "Tacos",
-    descripcion:
-      "Unos tacos tradicionales con carne asada, cebolla y cilantro.",
+    name: 'Sopa de tortilla',
+    image: 'https://example.com/ensalada.jpg',
   },
   {
-    imagen: "../../assets/juan.jpg",
-    nombre: "Pasta",
-    descripcion: "Un plato de pasta con salsa de tomate y albahaca.",
+    name: 'Hamburguesa',
+    image: 'https://example.com/hamburguesa.jpg',
   },
   {
-    imagen: "../../assets/juan.jpg",
-    nombre: "Arroz con pollo",
-    descripcion: "Un plato de arroz con pollo, verduras y salsa.",
+    name: 'Pasta',
+    image: 'https://example.com/pasta.jpg',
+  },
+  {
+    name: 'Lasagna',
+    image: 'https://example.com/ramen.jpg',
+  },
+  {
+    name: 'Hamburguesa',
+    image: 'https://example.com/paella.jpg',
+  },
+  {
+    name: 'Pescado frito',
+    image: 'https://example.com/ceviche.jpg',
+  },
+  {
+    name: 'Churrasco',
+    image: 'https://example.com/churrasco.jpg',
+  },
+  {
+    name: 'Tomahawk',
+    image: 'https://example.com/tiramisu.jpg',
+  },
+  {
+    name: 'Panini',
+    image: 'https://example.com/croissant.jpg',
   },
 ];
 
+const Separator = ({ title }) => (
+  <View style={styles.separator}>
+    <Text style={styles.separatorText}>{title}</Text>
+  </View>
+);
+
 const Comidas = () => {
+  const renderItem = ({ item }) => (
+    <Card style={styles.card}>
+      <Image source={{ uri: item.image }} style={styles.image} />
+      <View style={styles.info}>
+        <Text style={styles.name}>{item.name}</Text>
+      </View>
+    </Card>
+  );
+
   return (
-    <View style={styles.container}>
-      {comidasFavoritas.map((comida) => (
-        <View key={comida.nombre} style={styles.comida}>
-          <Image source={{ uri: comida.imagen }} style={styles.imagen}
- />
-          <Text style={styles.nombre}>{comida.nombre}</Text>
-          <Text style={styles.descripcion}>{comida.descripcion}</Text>
-        </View>
-      ))}
-    </View>
+    <FlatList
+      data={[
+        { separator: true, title: 'Guille' },
+        ...foods.slice(0, 6),
+        { separator: true, title: 'Fran' },
+        ...foods.slice(6),
+      ]}
+      renderItem={({ item }) => {
+        if (item.separator) {
+          return <Separator title={item.title} />;
+        }
+        return renderItem({ item });
+      }}
+      keyExtractor={(item, index) => index.toString()}
+      numColumns={2}
+      columnWrapperStyle={styles.row}
+      contentContainerStyle={styles.container}
+    />
   );
 };
+
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  comida: {
-    width: '100%',
-    height: 100,
-    backgroundColor: '#fff',
-    borderRadius: 10,
-    marginBottom: 10,
     padding: 10,
   },
-  imagen: {
-    width: 50,
-    height: 50,
-    borderRadius: 50,
+  row: {
+    flex: 1,
+    justifyContent: 'space-around',
   },
-  nombre: {
-    fontSize: 18,
+  card: {
+    flexBasis: '48%',
+    marginBottom: 15,
+  },
+  image: {
+    height: 150,
+    width: '100%',
+  },
+  info: {
+    padding: 10,
+  },
+  name: {
+    fontSize: 16,
     fontWeight: 'bold',
   },
-  descripcion: {
-    fontSize: 16,
+  separator: {
+    flex: 1,
+    alignItems: 'center',
+    marginVertical: 20,
+  },
+  separatorText: {
+    fontSize: 24,
+    fontWeight: 'bold',
   },
 });
+
 export default Comidas;

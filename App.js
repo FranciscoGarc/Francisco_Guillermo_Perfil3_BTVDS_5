@@ -4,7 +4,6 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import Cards from './src/screens/Cards';
 import Comidas from './src/screens/Comidas';
-import CardView from './src/screens/CardVIew';
 const Tab = createBottomTabNavigator();
 
 const App = () => {
@@ -13,7 +12,6 @@ const App = () => {
       <Tab.Navigator>
         <Tab.Screen name="Cards" component={Cards} />
         <Tab.Screen name="Comidas" component={Comidas} />
-        <Tab.Screen name="CardView" component={CardView} />
       </Tab.Navigator>
     </NavigationContainer>
   );

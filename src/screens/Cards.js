@@ -4,14 +4,14 @@ import { View, Text, StyleSheet, Image, ScrollView } from 'react-native';
 const students = [
   {
     id: 1,
-    name: 'Fran Garcia',
-    card: '12345',
+    name: 'Francisco Daniel Garcia Ramos',
+    card: '20220326',
     photo: require('../../assets/juan.jpg'),
   },
   {
     id: 2,
-    name: 'Stanley',
-    card: '54321',
+    name: 'Guillermo Stanley Recinos Alvarenga',
+    card: '20220383',
     photo: require('../../assets/maria.jpg'),
   },
   // Agrega más estudiantes aquí
